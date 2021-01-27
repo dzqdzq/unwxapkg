@@ -107,6 +107,9 @@ module.exports = {
     let files = fs.readdirSync(filePath);
 
     for(let filename of files){
+      if(filename[0] === '.'){
+        continue;
+      }
       //获取当前文件的绝对路径
       var filedir = path.join(filePath, filename);
       let stats = fs.statSync(filedir);
