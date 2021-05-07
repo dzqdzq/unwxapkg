@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thedreamwork/unwxapkg.git"
+    "url": "https://github.com/dzqdzq/unwxapkg.git"
   },
   "bin": {"unwxapkg":"bin/cmd.js"},
   "license": "MIT"
