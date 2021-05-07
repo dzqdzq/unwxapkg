@@ -12,6 +12,7 @@ if(!fileName){
   new Error(`参数不正确`);
 }
 
+wxapkgExts = ['.wxapkg', '.wxvpkg', '.wx']
 if (fileName=== '*'){
   let paths = fs.readdirSync('.');
   console.log(paths);
@@ -19,7 +20,7 @@ if (fileName=== '*'){
   paths.forEach(fileName=>{
     fileName = path.resolve(fileName);
     var extname=path.extname(fileName);
-    if(['.wxapkg', '.wx'].includes(extname)){
+    if(wxapkgExts.includes(extname)){
       processOne(fileName)
     }
   })
@@ -40,7 +41,7 @@ function processOne(fileName){
   
   fileName = path.resolve(fileName);
   var extname=path.extname(fileName);
-  let isDecode = ['.wxapkg', '.wx'].includes(extname);
+  let isDecode = wxapkgExts.includes(extname);
   
   if(isDecode){// 解码
     let file = fs.readFileSync(fileName);

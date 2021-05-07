@@ -72,7 +72,7 @@ class Wxapkg {
   encode(files, wxapkgFileName){
     let fd = fs.createWriteStream(wxapkgFileName, "binary");
 
-    let buffer = Buffer.alloc(1024);
+    let buffer = Buffer.alloc(2048*2048);
     let head = {
       fileInfo:0,
       indexInfoLength:0,
